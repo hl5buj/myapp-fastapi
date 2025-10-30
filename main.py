@@ -14,7 +14,9 @@ def protected_route(current_user: Dict = Depends(get_current_user)):
     """보호된 엔드포인트 - 로그인 필요"""
     return {
         "message": "인증 성공!",
-        "user_id": current_user["user_id"]
+        "user_id": current_user["user_id"],
+        "username": current_user["username"]
+        
     }
 
 @app.post("/upload")

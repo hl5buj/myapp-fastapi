@@ -1,10 +1,10 @@
+from typing import Dict
 import jwt
 from fastapi import HTTPException, status, Depends
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from typing import Dict
 
 # Public Key 읽기
-with open('public.pem') as f:
+with open('public.pem', encoding='utf-8') as f:
     PUBLIC_KEY = f.read()
 
 # HTTPBearer: Authorization 헤더에서 토큰 추출
